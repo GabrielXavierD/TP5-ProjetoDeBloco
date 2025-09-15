@@ -2,7 +2,7 @@
 **Teste de Performance 5 - Engenharia de Software**  
 
 ## 📄 Descrição  
-Sistema de gerenciamento de usuários com API REST, utilizando arquivos CSV para persistência de dados.
+Sistema de gerenciamento de usuários com API REST, utilizando arquivo CSV para persistência de dados.
 O usuário interage pelo console da IDE ao qual há um menu com diversas opções, podendo manipular tanto o arquivo CSV quanto consumir os endpoints da API.
 
 ## 🚀 Evolução do Sistema - TP5  

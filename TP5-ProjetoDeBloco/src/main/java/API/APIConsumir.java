@@ -59,7 +59,7 @@ public class APIConsumir {
         if (codigoResposta == HttpURLConnection.HTTP_CREATED) {
             return tratarResposta(conexao);
         }
-        return "Erro ao cadastrar usuário: " + codigoResposta;
+        return "Erro ao cadastrar usuário (este usuário já existe ou os dados enviados são inválidos) - Código recebido: " + codigoResposta;
     }
 
     public String atualizarUsuarioPorNome(String nomeUsuario, String usuarioAtualizadoJson) throws IOException, URISyntaxException {

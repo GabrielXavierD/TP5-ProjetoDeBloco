@@ -107,7 +107,7 @@ public class Interacao {
                     try {
                         String usuarioJson = UtilitarioAPI.receberUsuarioCompletoJson();
                         String resultado = api.inserirUsuario(usuarioJson);
-                        System.out.println("O usuário inserido foi: " + resultado);
+                        System.out.println("Resultado da inserção: " + resultado);
                     } catch (Exception erro) {
                         System.out.println("Erro ao cadastrar usuário: " + erro.getMessage());
                     }
@@ -125,10 +125,11 @@ public class Interacao {
                         System.out.println("Nenhum usuário logado. Faça login primeiro.");
                         break;
                     }
-                    try {
-                        System.out.println("Sua senha é: " + api.getSenhaPorNome(usuarioLogado));
-                    } catch (Exception erro) {
-                        System.out.println("Erro ao buscar senha: " + erro.getMessage());
+                    String senha = api.getSenhaPorNome(usuarioLogado);
+                    if (senha.contains("Erro") || senha.contains("não encontrado")) {
+                        System.out.println("Erro: " + senha);
+                    } else {
+                        System.out.println("Sua senha é: " + senha);
                     }
                     break;
                 case "7":

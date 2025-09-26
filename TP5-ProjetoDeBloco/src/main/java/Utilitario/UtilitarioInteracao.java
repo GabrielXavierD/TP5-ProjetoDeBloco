@@ -27,10 +27,10 @@ public class UtilitarioInteracao {
                 break;
             }
 
-            if (novoNome.length() < 4) {
-                System.out.print("Erro: O nome deve ter pelo menos 4 caracteres. Digite novamente: ");
+            if (novoNome.length() < 3) {
+                System.out.print("Erro: O nome deve ter pelo menos 3 caracteres. Digite novamente: ");
             }
-        } while (novoNome.length() < 4);
+        } while (novoNome.length() < 3);
 
         if (!novoNome.isEmpty() && nomeJaExiste(novoNome)) {
             return "Erro: Este nome de usuário já existe!";
@@ -45,13 +45,19 @@ public class UtilitarioInteracao {
         String senhaParaJson = novaSenha.isEmpty() ? "MANTER_SENHA_ATUAL" : novaSenha;
 
         System.out.print("Atualizando Tipo - O tipo atual é '" + tipoAtual + "' - Digite uma das duas opções 'Cliente' ou 'Administrador': ");
-        String novoTipoInput = entrada.nextLine().trim();
-
-        if (!novoTipoInput.isEmpty()) {
-            if (!novoTipoInput.equalsIgnoreCase("Cliente") && !novoTipoInput.equalsIgnoreCase("Administrador")) {
-                return "Erro: Digite uma das duas opções 'Cliente' ou 'Administrador'";
+        while (true) {
+            String novoTipoInput = entrada.nextLine().trim();
+            if (novoTipoInput.isEmpty()) {
+                break;
             }
-            tipoAtual = novoTipoInput;
+
+            if (novoTipoInput.equals("Cliente") || novoTipoInput.equals("Administrador")) {
+                tipoAtual = novoTipoInput;
+                break;
+            } else {
+                System.out.println("Erro: Digite exatamente 'Cliente' ou 'Administrador'");
+                System.out.print("Tente novamente: ");
+            }
         }
 
         String usuarioAtualizadoJson = "{\"nomeUsuario\":\"" + nomeAtual + "\",\"senhaUsuario\":\"" + senhaParaJson + "\",\"tipoUsuario\":\"" + tipoAtual + "\"}";

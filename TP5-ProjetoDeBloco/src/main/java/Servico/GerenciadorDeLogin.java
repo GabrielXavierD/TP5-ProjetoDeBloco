@@ -29,7 +29,7 @@ public class GerenciadorDeLogin {
             leitor.close();
 
             if (!usuarioEncontrado) {
-                System.out.println("O usuário não foi encontrado no sistema!");
+                System.out.println("O usuário não foi encontrado no sistema! Verifique os dados e tente novamente ou registre-se.");
             }
 
         }catch(IOException erro){
@@ -66,7 +66,7 @@ public class GerenciadorDeLogin {
         }
 
         if (usuarioJaExisteNoArquivo) {
-            System.out.println("Este nome já foi registrado no sistema! Registro cancelado.");
+            System.out.println("Este usuário já foi registrado no sistema! Registro cancelado.");
             return;
         }
 

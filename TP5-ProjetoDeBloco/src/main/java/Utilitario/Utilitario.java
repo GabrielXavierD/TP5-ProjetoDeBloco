@@ -18,7 +18,7 @@ public class Utilitario {
                 System.exit(0);
             }
 
-            if (nome.trim().length() >= 4) {
+            if (nome.trim().length() >= 3) {
                     return nome;
             } else {
                 System.out.println("Erro: O nome é inválido! O nome deve ter pelo menos 4 caracteres.");

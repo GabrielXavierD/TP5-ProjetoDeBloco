@@ -43,7 +43,7 @@ public class ValidarEndereco {
                 if (validarNumeroEndereco(numero)) {
                     return numero;
                 } else {
-                    System.out.println("Erro: Digite um número válido (pode conter números, letras, / ou -) - Ex.: 123, 45A.");
+                    System.out.println("Erro: Digite um número válido (pode conter números, letras, / ou -) - Ex.: 123, 45A, S/N.");
                 }
             } else {
                 System.out.println("Erro: O número não pode estar vazio.");

@@ -43,7 +43,7 @@ public class ValidarEndereco {
                 if (validarNumeroEndereco(numero)) {
                     return numero;
                 } else {
-                    System.out.println("Erro: Digite um número válido (pode conter números, letras, / ou -).");
+                    System.out.println("Erro: Digite um número válido (pode conter números, letras, / ou -) - Ex.: 123, 45A.");
                 }
             } else {
                 System.out.println("Erro: O número não pode estar vazio.");
@@ -52,7 +52,7 @@ public class ValidarEndereco {
     }
 
     public static boolean validarNumeroEndereco(String numero) {
-        return numero.matches("[0-9A-Za-z\\/\\-\\s]+");
+        return numero.matches("[0-9A-Za-z\\/\\-\\s]+") && !numero.matches("^[A-Za-z\\s]+$");
     }
 
     public static String receberBairro() {

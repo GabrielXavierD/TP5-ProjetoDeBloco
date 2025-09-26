@@ -49,10 +49,10 @@ public class Utilitario {
                 System.exit(0);
             }
 
-            if (senha.length() >= 1) {
+            if (senha.length() >= 3) {
                 return senha;
             } else {
-                System.out.println("Erro: Digite um nome válido com apenas letras e espaços.");
+                System.out.println("Erro: Digite uma senha válida com ao menos 3 caracteres.");
             }
         }
     }

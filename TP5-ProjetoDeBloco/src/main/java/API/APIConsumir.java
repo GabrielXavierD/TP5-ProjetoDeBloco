@@ -56,7 +56,7 @@ public class APIConsumir {
         saida.write(conteudoBody);
         int codigoResposta = conexao.getResponseCode();
         System.out.println("O código de resposta recebido foi: " + codigoResposta);
-        if (codigoResposta == HttpURLConnection.HTTP_CREATED || codigoResposta == HttpURLConnection.HTTP_OK) {
+        if (codigoResposta == HttpURLConnection.HTTP_CREATED) {
             return tratarResposta(conexao);
         }
         return "Erro ao cadastrar usuário: " + codigoResposta;
